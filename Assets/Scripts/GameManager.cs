@@ -6,11 +6,11 @@ public class GameManager : MonoBehaviour {
 
     public float instructLength = 2.0f;
     public static GameManager instance = null;
-    public BoardManager boardScript;
+    private BoardManager boardScript;
 
     private Text instructionText;
     private GameObject instructImage;
-    private int level = 3;
+    private int level = 1;
     private bool startingGame;
 
     void Awake()
@@ -25,6 +25,14 @@ public class GameManager : MonoBehaviour {
         InitGame();
     }
 
+    public void GameOver()
+    {
+        instructionText.text = "Game Over";
+        instructImage.SetActive(true);
+        enabled = false;
+    }
+
+
     private void HideInstructText()
     {
         instructImage.SetActive(false);
@@ -32,8 +40,10 @@ public class GameManager : MonoBehaviour {
     }
 
 
-    private void onLevelWasLoaded(int index)
+    private void OnLevelWasLoaded(int index)
     {
+        Debug.Log("Level was loaded");
+        level++;
         InitGame();
     }
 
@@ -44,7 +54,7 @@ public class GameManager : MonoBehaviour {
 
         instructImage = GameObject.Find("LevelImage");
         instructionText = GameObject.Find("LevelText").GetComponent<Text>();
-        instructionText.text = "Use arrow keys to move. Eat brown food to grow. Escape.";
+        instructionText.text = "Level " + level + " Use arrow keys to move. Eat brown food to grow. Escape.";
         instructImage.SetActive(true);
         Invoke("HideInstructText", instructLength);
 

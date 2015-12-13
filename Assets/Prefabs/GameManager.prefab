@@ -40,6 +40,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb8ca69f0e754ac46b5b97593d587aeb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  instructLength: 2
   boardScript: {fileID: 0}
 --- !u!114 &11454038
 MonoBehaviour:
@@ -55,8 +56,8 @@ MonoBehaviour:
   columns: 8
   rows: 8
   wallcount:
-    minimum: 5
-    maximum: 9
+    minimum: 15
+    maximum: 15
   foodCount:
     minimum: 1
     maximum: 5
@@ -75,7 +76,31 @@ Prefab:
   serializedVersion: 2
   m_Modification:
     m_TransformParent: {fileID: 0}
-    m_Modifications: []
+    m_Modifications:
+    - target: {fileID: 0}
+      propertyPath: columns
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: rows
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: wallcount.minimum
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: wallcount.maximum
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: foodCount.minimum
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: foodCount.maximum
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 108452}

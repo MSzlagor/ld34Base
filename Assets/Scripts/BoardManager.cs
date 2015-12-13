@@ -78,7 +78,10 @@ public class BoardManager : MonoBehaviour {
             Vector3 randomPosition = RandomPosition();
             GameObject tileChoice = tileArray[Random.Range(0, tileArray.Length)];
             Instantiate(tileChoice, randomPosition, Quaternion.identity);
+
+       //     Debug.Log("Placing " + tileChoice + " at " + randomPosition.x + " " + randomPosition.y);
         }
+
     }
 
     void LayoutTunnel(GameObject[] tileArray, int minimum, int maximum)
@@ -107,6 +110,6 @@ public class BoardManager : MonoBehaviour {
         LayoutObjectAtRandom(foodTiles, foodCount.minimum, foodCount.maximum);
         int enemyCount = (int)Mathf.Log(level, 2f);
         LayoutObjectAtRandom(enemyTiles, enemyCount, enemyCount);
-        Instantiate(exit, new Vector3(columns - 1, rows - 1), Quaternion.identity);
+        Instantiate(exit, new Vector3(columns - 1, rows - 1, 0f), Quaternion.identity);
     }
 }

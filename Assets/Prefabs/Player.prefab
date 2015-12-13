@@ -47,7 +47,7 @@ Rigidbody2D:
   m_IsKinematic: 0
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!61 &6107920
 BoxCollider2D:
@@ -94,8 +94,10 @@ MonoBehaviour:
   playerSpeed: 30
   pointsPerFood: 0
   health: 100
-  healthLossRate: 0.01
+  healthLossRate: 0.001
   foodText: {fileID: 0}
+  restartLevelDelay: 1
+  eatSound: {fileID: 8300000, guid: 3d1673cc5b00d244ebbd7c00bf23c35d, type: 3}
 --- !u!212 &21228960
 SpriteRenderer:
   m_ObjectHideFlags: 1
@@ -137,6 +139,18 @@ Prefab:
       propertyPath: m_IsKinematic
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: healthLossRate
+      value: 0.001
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: m_CollisionDetection
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 0}
+      propertyPath: eatSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 3d1673cc5b00d244ebbd7c00bf23c35d, type: 3}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 0}
   m_RootGameObject: {fileID: 184454}
